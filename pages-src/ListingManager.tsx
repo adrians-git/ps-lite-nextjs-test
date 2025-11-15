@@ -303,6 +303,7 @@ const ListingManager = () => {
                     bathrooms={listingData.bathrooms}
                     imageUrl={primaryImage}
                     status="sold"
+                    listingId="345-rim-shadows-dr-sedona"
                     primaryActionLabel="Create Just Sold Ad"
                     primaryActionVariant="orange"
                     onPrimaryAction={() => handleJustSoldAdClick(listingData)}
@@ -320,6 +321,7 @@ const ListingManager = () => {
                   bathrooms={mockListing.bathrooms}
                   imageUrl={mockListing.imageUrl}
                   status="sold"
+                  listingId="345-rim-shadows-dr-sedona"
                   primaryActionLabel="Create Just Sold Ad"
                   primaryActionVariant="orange"
                   onPrimaryAction={() => handleJustSoldAdClick(mockListing)}
@@ -356,6 +358,7 @@ const ListingManager = () => {
                   bathrooms={listingData.bathrooms}
                   imageUrl={primaryImage}
                   status="active"
+                  listingId="345-rim-shadows-dr-sedona"
                   primaryActionLabel="Start New Campaign"
                   onPrimaryAction={() => handleStartCampaign(listingData)}
                   showEditDelete={listingData.isManuallyCreated}
@@ -377,6 +380,7 @@ const ListingManager = () => {
                 bathrooms={mockListing.bathrooms}
                 imageUrl={mockListing.imageUrl}
                 status="active"
+                listingId="345-rim-shadows-dr-sedona"
                 primaryActionLabel="Start New Campaign"
                 onPrimaryAction={() => handleStartCampaign(mockListing)}
                 showMarkAsSold={true}
@@ -413,6 +417,7 @@ const ListingManager = () => {
                     bathrooms={listingData.bathrooms}
                     imageUrl={primaryImage}
                     status="inactive"
+                    listingId="345-rim-shadows-dr-sedona"
                     primaryActionLabel="Create Just Sold Ad"
                     onPrimaryAction={() => handleJustSoldAdClick(listingData)}
                     showHide={true}
@@ -431,6 +436,7 @@ const ListingManager = () => {
                   bathrooms={mockListing.bathrooms}
                   imageUrl={mockListing.imageUrl}
                   status="inactive"
+                  listingId="345-rim-shadows-dr-sedona"
                   primaryActionLabel="Create Just Sold Ad"
                   onPrimaryAction={() => handleJustSoldAdClick(mockListing)}
                   showHide={true}

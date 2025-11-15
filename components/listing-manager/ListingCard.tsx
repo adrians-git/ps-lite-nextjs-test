@@ -11,6 +11,7 @@ interface ListingCardProps {
   bathrooms: number;
   imageUrl?: string;
   status?: "active" | "sold" | "inactive";
+  listingId?: string;
   onPrimaryAction?: () => void;
   onEdit?: () => void;
   onDelete?: () => void;
@@ -30,6 +31,7 @@ export const ListingCard = ({
   bathrooms,
   imageUrl,
   status = "active",
+  listingId,
   onPrimaryAction,
   onEdit,
   onDelete,
@@ -51,8 +53,17 @@ export const ListingCard = ({
     return null;
   };
 
+  const handleCardClick = () => {
+    if (listingId) {
+      window.open(`/listing/${listingId}`, '_blank');
+    }
+  };
+
   return (
-    <Card className={`overflow-hidden transition-all hover:shadow-lg group ${status === "inactive" ? "opacity-75" : ""}`}>
+    <Card
+      className={`overflow-hidden transition-all hover:shadow-lg group ${status === "inactive" ? "opacity-75" : ""} ${listingId ? "cursor-pointer" : ""}`}
+      onClick={handleCardClick}
+    >
       <div className="flex flex-col sm:flex-row">
         {/* Image */}
         <div className="w-full sm:w-48 sm:h-48 shrink-0 relative overflow-hidden">
@@ -104,8 +115,11 @@ export const ListingCard = ({
               <>
                 <Button
                   size="sm"
-                  className="flex-1 gap-2"
-                  onClick={onPrimaryAction}
+                  className="gap-2"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onPrimaryAction?.();
+                  }}
                 >
                   <Plus className="w-4 h-4" />
                   Start New Campaign
@@ -113,7 +127,10 @@ export const ListingCard = ({
                 <Button
                   size="sm"
                   variant="outline"
-                  onClick={onEdit}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onEdit?.();
+                  }}
                   className="shrink-0"
                 >
                   <Edit className="w-4 h-4" />
@@ -121,7 +138,10 @@ export const ListingCard = ({
                 <Button
                   size="sm"
                   variant="destructive"
-                  onClick={onDelete}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onDelete?.();
+                  }}
                   className="shrink-0"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -132,7 +152,10 @@ export const ListingCard = ({
                 <Button
                   size="sm"
                   className="gap-2"
-                  onClick={onPrimaryAction}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onPrimaryAction?.();
+                  }}
                 >
                   <Plus className="w-4 h-4" />
                   {primaryActionLabel}
@@ -140,7 +163,10 @@ export const ListingCard = ({
                 <Button
                   size="sm"
                   variant="ghost"
-                  onClick={onMarkAsSold}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onMarkAsSold?.();
+                  }}
                   className="gap-2"
                 >
                   <CheckCircle className="w-4 h-4" />
@@ -152,7 +178,10 @@ export const ListingCard = ({
                 <Button
                   size="sm"
                   className="gap-2"
-                  onClick={onPrimaryAction}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onPrimaryAction?.();
+                  }}
                 >
                   <Plus className="w-4 h-4" />
                   {primaryActionLabel}
@@ -160,7 +189,10 @@ export const ListingCard = ({
                 <Button
                   size="sm"
                   variant="ghost"
-                  onClick={onHide}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onHide?.();
+                  }}
                   className="gap-2"
                 >
                   <EyeOff className="w-4 h-4" />
@@ -171,7 +203,10 @@ export const ListingCard = ({
               <Button
                 size="sm"
                 className={`gap-2 ${primaryActionVariant === "orange" ? "bg-orange-600 hover:bg-orange-700" : ""}`}
-                onClick={onPrimaryAction}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onPrimaryAction?.();
+                }}
                 variant={primaryActionVariant === "orange" ? "default" : "default"}
               >
                 {primaryActionVariant === "orange" ? <PlayCircle className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
