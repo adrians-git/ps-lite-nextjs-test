@@ -7,7 +7,7 @@ import { useRouter, useParams } from "next/navigation";
 
 export const CampaignVideos = () => {
   const router = useRouter();
-  const { campaignId } = useParams();
+  const { id: campaignId } = useParams();
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
   const videos = [
