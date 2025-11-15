@@ -1,7 +1,8 @@
 import * as z from "zod/v4";
 
 // Mock type for react-hook-form (not installed in this project)
-export type UseFormReturn<T extends Record<string, any> = {}> = any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type UseFormReturn<T extends Record<string, any> = Record<string, unknown>> = any;
 
 export const profileFormSchema = z.object({
   // Contact & Professional Info (Step 1)

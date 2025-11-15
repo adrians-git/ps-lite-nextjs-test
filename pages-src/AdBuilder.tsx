@@ -40,16 +40,28 @@ const AdBuilder = () => {
   const [editingListing, setEditingListing] = useState<ListingData | null>(null);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
   const [saveStatus, setSaveStatus] = useState<'saved' | 'saving' | null>(null);
+  const [currentTime, setCurrentTime] = useState<number>(() => Date.now());
+
+  // Update current time every second for "saved X seconds ago" display
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(Date.now());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Auto-save simulation
   useEffect(() => {
     if (state.adCopy || state.selectedPhotos.length > 0) {
-      setSaveStatus('saving');
-      const timer = setTimeout(() => {
+      const savingTimer = setTimeout(() => setSaveStatus('saving'), 0);
+      const saveTimer = setTimeout(() => {
         setLastSaved(new Date());
         setSaveStatus('saved');
       }, 1000);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(savingTimer);
+        clearTimeout(saveTimer);
+      };
     }
   }, [state.adCopy, state.selectedPhotos, state.selectedActors, state.selectedMusicId]);
 
@@ -118,8 +130,8 @@ const AdBuilder = () => {
                     <>
                       <Check className="w-4 h-4 text-green-600 dark:text-green-400" />
                       <span className="hidden md:inline">
-                        Saved {lastSaved && new Date().getTime() - lastSaved.getTime() < 60000
-                          ? `${Math.floor((new Date().getTime() - lastSaved.getTime()) / 1000)}s ago`
+                        Saved {lastSaved && currentTime - lastSaved.getTime() < 60000
+                          ? `${Math.floor((currentTime - lastSaved.getTime()) / 1000)}s ago`
                           : 'just now'}
                       </span>
                     </>

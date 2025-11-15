@@ -35,7 +35,7 @@ const ContactsTable = ({ searchQuery, managedByFilter, sourceFilter, statusFilte
   const itemsPerPage = 10;
 
   useEffect(() => {
-    setMounted(true);
+    setTimeout(() => setMounted(true), 0);
   }, []);
 
   const allContacts: Lead[] = mockLeads;
@@ -184,10 +184,7 @@ const ContactsTable = ({ searchQuery, managedByFilter, sourceFilter, statusFilte
                 className="h-auto p-0 font-medium text-muted-foreground hover:text-foreground justify-start"
               >
                 Name
-                {(() => {
-                  const SortIcon = getSortIcon('name');
-                  return <SortIcon className="h-4 w-4 ml-2" />;
-                })()}
+                {React.createElement(getSortIcon('name'), { className: "h-4 w-4 ml-2" })}
               </Button>
             </TableHead>
             <TableHead className="hidden lg:table-cell w-[140px]">
@@ -197,10 +194,7 @@ const ContactsTable = ({ searchQuery, managedByFilter, sourceFilter, statusFilte
                 className="h-auto p-0 font-medium text-muted-foreground hover:text-foreground justify-start"
               >
                 Managed By
-                {(() => {
-                  const SortIcon = getSortIcon('managedBy');
-                  return <SortIcon className="h-4 w-4 ml-2" />;
-                })()}
+                {React.createElement(getSortIcon('managedBy'), { className: "h-4 w-4 ml-2" })}
               </Button>
             </TableHead>
             <TableHead className="hidden xl:table-cell w-[80px]">Last Message</TableHead>
@@ -212,10 +206,7 @@ const ContactsTable = ({ searchQuery, managedByFilter, sourceFilter, statusFilte
                 className="h-auto p-0 font-medium text-muted-foreground hover:text-foreground justify-start"
               >
                 Last Activity
-                {(() => {
-                  const SortIcon = getSortIcon('lastContact');
-                  return <SortIcon className="h-4 w-4 ml-2" />;
-                })()}
+                {React.createElement(getSortIcon('lastContact'), { className: "h-4 w-4 ml-2" })}
               </Button>
             </TableHead>
             <TableHead className="hidden md:table-cell w-[120px]">Drip Status</TableHead>

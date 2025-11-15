@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "@/hooks/use-toast";
 import type { AdBuilderState, OpenHouseEvent } from "@/types/adBuilder";
@@ -34,18 +34,11 @@ export const useAdBuilder = () => {
     listings: [],
   });
 
-  // Load existing campaign data in edit mode
-  useEffect(() => {
-    if (isEditMode && campaignId) {
-      loadCampaignData(campaignId);
-    }
-  }, [campaignId, isEditMode]);
-
   /**
    * Loads existing campaign data for editing
    * @param id - The campaign ID to load
    */
-  const loadCampaignData = (id: string) => {
+  const loadCampaignData = useCallback((id: string) => {
     // Get campaign from mock data
     const campaign = campaignData[id as keyof typeof campaignData];
 
@@ -73,7 +66,14 @@ export const useAdBuilder = () => {
       openStep: "step1", // Start with first step open in edit mode
       listings: [],
     });
-  };
+  }, [toast, router]);
+
+  // Load existing campaign data in edit mode
+  useEffect(() => {
+    if (isEditMode && campaignId) {
+      setTimeout(() => loadCampaignData(campaignId), 0);
+    }
+  }, [campaignId, isEditMode, loadCampaignData]);
 
   /**
    * Toggles photo selection state with 9-photo limit

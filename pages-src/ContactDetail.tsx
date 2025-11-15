@@ -119,8 +119,11 @@ const ContactDetail = () => {
   const handleUnsubscribeContact = () => {
     logger.log("Unsubscribing contact:", contact.name);
 
+    // Date.now() is safe here - this is an event handler, not render
+    // eslint-disable-next-line
+    const timestamp = Date.now();
     const unsubscribeActivity: Activity = {
-      id: `unsubscribe-${Date.now()}`,
+      id: `unsubscribe-${timestamp}`,
       type: "manual_note",
       title: "Contact Unsubscribed",
       description: "Contact has been unsubscribed from all communications",
