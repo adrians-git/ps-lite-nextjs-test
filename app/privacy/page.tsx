@@ -5,6 +5,13 @@ import { MarketingFooter } from "@/components/marketing/MarketingFooter";
 export const metadata: Metadata = {
   title: "Privacy Policy - PropertySimple",
   description: "PropertySimple Privacy Policy - How we collect, use, and protect your information.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PrivacyPage() {

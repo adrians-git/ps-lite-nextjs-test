@@ -8,6 +8,32 @@ export const metadata: Metadata = {
   title: "Pricing - PropertySimple Video Ads | $147 Per Listing or $97/mo Subscription",
   description: "Simple, transparent pricing for AI-powered video ads. Pay-per-listing at $147 or subscribe for $97/mo and save 25% on every ad. 48-hour money-back guarantee.",
   keywords: "real estate video ad pricing, AI ad costs, real estate marketing prices, video ad subscription",
+  alternates: {
+    canonical: "/pricing",
+  },
+  openGraph: {
+    title: "Simple, Transparent Pricing | PropertySimple Video Ads",
+    description: "Pay-per-listing at $147 or subscribe for $97/mo and save 25% on every ad. 48-hour money-back guarantee. No hidden fees, no surprises.",
+    url: "/pricing",
+    siteName: "PropertySimple",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PropertySimple Pricing - Affordable Real Estate Video Ads",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Simple Pricing | PropertySimple Video Ads",
+    description: "$147 per listing or $97/mo subscription. Save 25% with AutoAds. 48-hour money-back guarantee.",
+    images: ["/og-image.png"],
+    site: "@PropertySimple",
+    creator: "@PropertySimple",
+  },
 };
 
 export default function PricingPage() {

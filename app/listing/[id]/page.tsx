@@ -42,9 +42,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
+    alternates: {
+      canonical: `/listing/${id}`,
+    },
     openGraph: {
       title,
       description,
+      url: `/listing/${id}`,
+      siteName: 'PropertySimple',
       images: [
         {
           url: listing.images[0]?.url || '',
@@ -60,6 +65,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       images: [listing.images[0]?.url || ''],
+      site: '@PropertySimple',
+      creator: '@PropertySimple',
     },
   };
 }

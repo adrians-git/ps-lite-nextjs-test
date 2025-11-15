@@ -253,7 +253,6 @@ export default function Inbox() {
     toast("Message Sent", {
       description: "Your reply has been sent successfully."
     });
-    setReplyText("");
     setSelectedItemId(null);
   };
 

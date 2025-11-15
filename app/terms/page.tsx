@@ -5,6 +5,13 @@ import { MarketingFooter } from "@/components/marketing/MarketingFooter";
 export const metadata: Metadata = {
   title: "Terms of Service - PropertySimple",
   description: "PropertySimple Terms of Service - Terms and conditions for using our video ad services.",
+  alternates: {
+    canonical: "/terms",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function TermsPage() {

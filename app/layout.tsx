@@ -3,8 +3,39 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.propertysimple.com'),
   title: "PropertySimple - AI-Powered Real Estate Marketing",
   description: "Run smarter real estate campaigns with AI assistance",
+  openGraph: {
+    siteName: "PropertySimple",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PropertySimple - AI-Powered Real Estate Video Ads",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@PropertySimple",
+    creator: "@PropertySimple",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

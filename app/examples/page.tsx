@@ -7,6 +7,32 @@ export const metadata: Metadata = {
   title: "Video Ad Examples - PropertySimple | See Real Estate Video Ads in Action",
   description: "Watch real examples of AI-generated video ads for real estate. See property tours and influencer-style videos that get results.",
   keywords: "real estate video examples, property ad samples, AI video ads, listing video examples",
+  alternates: {
+    canonical: "/examples",
+  },
+  openGraph: {
+    title: "Real Estate Video Ad Examples | PropertySimple",
+    description: "Watch real examples of AI-generated video ads for real estate. Property tours and influencer-style videos that stop the scroll and generate leads.",
+    url: "/examples",
+    siteName: "PropertySimple",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PropertySimple Video Ad Examples - See Real Estate Videos",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Real Estate Video Examples | PropertySimple",
+    description: "Watch AI-generated property tours and influencer-style videos that get results. See real examples that stop the scroll.",
+    images: ["/og-image.png"],
+    site: "@PropertySimple",
+    creator: "@PropertySimple",
+  },
 };
 
 export default function ExamplesPage() {

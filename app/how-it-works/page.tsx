@@ -9,6 +9,32 @@ export const metadata: Metadata = {
   title: "How It Works - PropertySimple | Simple AI Video Ads in 4 Steps",
   description: "See how easy it is to create AI-powered video ads for your listings. Buy, create, AI handles everything, you close deals. That's it!",
   keywords: "how video ads work, AI real estate marketing process, automated video ads",
+  alternates: {
+    canonical: "/how-it-works",
+  },
+  openGraph: {
+    title: "How It Works - Simple AI Video Ads in 4 Steps | PropertySimple",
+    description: "Four simple steps to AI-powered video ads. Buy, create, AI handles everything, you close deals. No tech skills or video editing required.",
+    url: "/how-it-works",
+    siteName: "PropertySimple",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PropertySimple - How It Works in 4 Simple Steps",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How It Works in 4 Simple Steps | PropertySimple",
+    description: "Buy, create, AI handles everything, you close deals. No tech skills needed. See how easy AI video ads can be.",
+    images: ["/og-image.png"],
+    site: "@PropertySimple",
+    creator: "@PropertySimple",
+  },
 };
 
 export default function HowItWorksPage() {

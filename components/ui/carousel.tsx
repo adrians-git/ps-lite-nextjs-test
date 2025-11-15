@@ -93,7 +93,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
       >
         <div
           ref={ref}
-          className={cn("relative", className)}
+          className={cn("relative", _className)}
           role="region"
           aria-label="Carousel"
           {...props}

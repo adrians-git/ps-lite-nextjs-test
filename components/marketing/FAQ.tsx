@@ -59,9 +59,27 @@ const faqs = [
 ];
 
 export function FAQ() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
-    <section className="grain-texture py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary/30 via-background to-primary/5">
-      <div className="container mx-auto max-w-4xl">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <section className="grain-texture py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary/30 via-background to-primary/5">
+        <div className="container mx-auto max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
@@ -119,5 +137,6 @@ export function FAQ() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -6,6 +6,32 @@ export const metadata: Metadata = {
   title: "About PropertySimple | 10+ Years of Real Estate Marketing Innovation",
   description: "PropertySimple has been pioneering AI-powered real estate marketing since 2016. Over 30,000 customers served with 5,000+ five-star reviews.",
   keywords: "PropertySimple company, real estate marketing company, AI video ads company",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About PropertySimple | 10+ Years of Real Estate Marketing Innovation",
+    description: "Pioneering AI-powered real estate marketing since 2016. Over 30,000 customers served with 5,000+ five-star reviews. Making real estate marketing simple.",
+    url: "/about",
+    siteName: "PropertySimple",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PropertySimple - About Our Real Estate Marketing Innovation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About PropertySimple | 10+ Years Innovation",
+    description: "Pioneering AI real estate marketing since 2016. 30,000+ customers, 5,000+ five-star reviews. Making marketing simple.",
+    images: ["/og-image.png"],
+    site: "@PropertySimple",
+    creator: "@PropertySimple",
+  },
 };
 
 export default function AboutPage() {
