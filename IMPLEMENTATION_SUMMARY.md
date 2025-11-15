@@ -466,3 +466,100 @@ This second implementation pass significantly improved the application's UX, com
 - ✅ Campaign status visibility
 
 The warm terracotta design system has been maintained throughout all implementations.
+
+---
+
+## Additional Features Added (Post-UX Redesign)
+
+### Marketing Site & Public Pages
+
+#### ✅ Marketing Website
+**Status:** COMPLETED
+**Files Created:**
+- `/app/page.tsx` - Homepage with conversion-optimized hero
+- `/app/pricing/page.tsx` - Pricing page with value messaging
+- `/app/how-it-works/page.tsx` - Features and process explanation
+- `/app/examples/page.tsx` - Video examples showcase
+- `/app/about/page.tsx` - Company information
+- `/components/marketing/MarketingNav.tsx` - Marketing navigation with real logo
+- `/components/marketing/MarketingFooter.tsx` - Marketing footer with real logo
+- `/components/marketing/HeroNew.tsx` - Asymmetric hero design
+- `/components/marketing/ProblemAgitate.tsx` - Direct response marketing section
+- `/components/marketing/CTA.tsx` - Call-to-action components
+- `/components/marketing/VideoShowcase.tsx` - Warm gradient video displays
+
+**Features:**
+- Warm terracotta/gold/cream color palette
+- Cabinet Grotesk + Outfit typography
+- Conversion-focused copywriting
+- SEO and LLMO optimization
+- Responsive design with mobile-first approach
+- Real PropertySimple logo integration
+
+#### ✅ Public Listing Detail Pages
+**Status:** COMPLETED
+**Files Created:**
+- `/app/listing/[id]/page.tsx` - SEO-optimized listing page with JSON-LD schema
+- `/app/listing/[id]/ListingPageClient.tsx` - Client-side Facebook Pixel integration
+- `/components/listing/ListingNav.tsx` - Navigation with real logo and call agent button
+- `/components/listing/ListingHero.tsx` - Photo gallery with fullscreen mode
+- `/components/listing/ListingStickyCTA.tsx` - Sticky mobile/desktop CTAs
+- `/components/listing/ListingOverview.tsx` - Price, stats, highlights
+- `/components/listing/ListingDescription.tsx` - Rich property description
+- `/components/listing/ListingContactForm.tsx` - Instant response contact flow
+- `/components/listing/ListingDetails.tsx` - Tabbed property specifications
+- `/components/listing/ListingMap.tsx` - Mapbox integration (ready)
+- `/components/listing/ListingSchools.tsx` - School ratings display
+- `/components/listing/ListingCalculator.tsx` - Mortgage calculator
+- `/components/listing/ListingNeighborhood.tsx` - Walk Score and amenities
+- `/components/listing/ListingAgent.tsx` - Agent card with 24/7 messaging
+- `/components/listing/ListingSimilar.tsx` - Related properties
+- `/components/listing/ListingOpenHouse.tsx` - Schedule component
+- `/data/mockListingData.ts` - Comprehensive listing data structure
+
+**Features:**
+- Instant response contact form with 3-step flow (success → typing → SMS preview)
+- AI assistant (Sarah) positioned as agent's assistant, not tech-focused
+- 24-image photo gallery with swipe gestures (react-swipeable)
+- Fullscreen gallery modal
+- Facebook Pixel tracking for retargeting
+- JSON-LD Schema for SEO rich snippets
+- OpenGraph and Twitter Card metadata
+- Mortgage calculator with down payment options
+- School ratings integration (ready for GreatSchools API)
+- Interactive maps (ready for Mapbox GL JS)
+- Similar properties showcase
+- Mobile-responsive with sticky CTAs
+- Real PropertySimple logo in navigation
+
+#### ✅ Clickable Listing Cards
+**Status:** COMPLETED
+**Files Modified:**
+- `/components/listing-manager/ListingCard.tsx` - Made entire card clickable
+- `/pages-src/ListingManager.tsx` - Added listingId prop to all cards
+
+**Features:**
+- Click anywhere on card to open listing detail page in new tab
+- All action buttons use stopPropagation to work independently
+- Cursor pointer indicates clickability
+- Compact button sizing (removed flex-1 for natural width)
+
+### Design System Updates
+
+#### Logo Integration Across Public Pages
+**Status:** COMPLETED
+**Files Modified:**
+- `/components/marketing/MarketingNav.tsx` - Real logo (light/dark mode)
+- `/components/marketing/MarketingFooter.tsx` - Real logo (light/dark mode)
+- `/components/listing/ListingNav.tsx` - Real logo (light/dark mode)
+
+**Implementation:**
+- Light mode: `/lovable-uploads/3ae8586b-2625-423a-8e97-0bae1a52dd43.png`
+- Dark mode: `/lovable-uploads/057a76e0-bc0c-4ad8-90e5-6096e23fbed7.png`
+- Consistent brand experience across marketing and application
+
+## Current Deployment
+
+- **Production URL:** https://ps-ads.vercel.app
+- **Branch:** marketing-site
+- **Status:** Live and public

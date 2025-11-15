@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { sedonaListing, similarListings } from '@/data/mockListingData';
+import { ListingNav } from '@/components/listing/ListingNav';
 import { ListingHero } from '@/components/listing/ListingHero';
 import { ListingStickyCTA } from '@/components/listing/ListingStickyCTA';
 import { ListingOverview } from '@/components/listing/ListingOverview';
@@ -120,6 +121,9 @@ export default async function ListingPage({ params }: PageProps) {
       />
 
       <div className="min-h-screen bg-background">
+        {/* Navigation */}
+        <ListingNav agentPhone={listing.agent.phone} />
+
         {/* Hero Gallery */}
         <ListingHero
           images={listing.images}

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function MarketingNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,11 +14,23 @@ export function MarketingNav() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
-              <span className="text-white font-bold text-lg">P</span>
-            </div>
-            <span className="font-bold text-xl">PropertySimple</span>
+          <Link href="/" className="flex items-center">
+            {/* Light mode logo */}
+            <Image
+              alt="PropertySimple"
+              className="h-8 w-auto block dark:hidden"
+              src="/lovable-uploads/3ae8586b-2625-423a-8e97-0bae1a52dd43.png"
+              width={200}
+              height={32}
+            />
+            {/* Dark mode logo */}
+            <Image
+              alt="PropertySimple"
+              className="h-8 w-auto hidden dark:block"
+              src="/lovable-uploads/057a76e0-bc0c-4ad8-90e5-6096e23fbed7.png"
+              width={200}
+              height={32}
+            />
           </Link>
 
           {/* Desktop Navigation */}

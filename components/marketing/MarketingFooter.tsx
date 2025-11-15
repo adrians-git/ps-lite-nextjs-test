@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export function MarketingFooter() {
   const currentYear = new Date().getFullYear();
@@ -123,11 +124,23 @@ export function MarketingFooter() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Logo & Copyright */}
             <div className="flex items-center gap-2">
-              <Link href="/" className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-gradient-to-br from-primary to-accent rounded flex items-center justify-center shadow-lg shadow-primary/20">
-                  <span className="text-white font-bold text-sm">P</span>
-                </div>
-                <span className="font-semibold">PropertySimple</span>
+              <Link href="/" className="flex items-center">
+                {/* Light mode logo */}
+                <Image
+                  alt="PropertySimple"
+                  className="h-6 w-auto block dark:hidden"
+                  src="/lovable-uploads/3ae8586b-2625-423a-8e97-0bae1a52dd43.png"
+                  width={150}
+                  height={24}
+                />
+                {/* Dark mode logo */}
+                <Image
+                  alt="PropertySimple"
+                  className="h-6 w-auto hidden dark:block"
+                  src="/lovable-uploads/057a76e0-bc0c-4ad8-90e5-6096e23fbed7.png"
+                  width={150}
+                  height={24}
+                />
               </Link>
               <span className="text-sm text-muted-foreground ml-4">
                 © {currentYear} PropertySimple. All rights reserved.
