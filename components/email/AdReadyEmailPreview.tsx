@@ -36,7 +36,7 @@ export const AdReadyEmailPreview = ({
         {/* Urgency Bar - Moved to top for immediate impact */}
         <div style={urgencyBarTop}>
           <p style={urgencyTextTop}>
-            ⏰ Launch Pricing Expires in {expiresInHours} Hours
+            Your personalized launch pricing is ready to view
           </p>
         </div>
 
@@ -227,21 +227,20 @@ export const AdReadyEmailPreview = ({
           </div>
         </div>
 
-        {/* Pricing Highlight */}
+        {/* Value Teaser Box */}
         <div style={pricingBox}>
-          <p style={pricingLabel}>LAUNCH PRICING</p>
-          <p style={pricingStrike}>$149</p>
-          <p style={pricingMain}>$117</p>
-          <p style={pricingSavings}>Save $32 • Approve within {expiresInHours} hours</p>
+          <p style={pricingLabel}>LAUNCH PRICING DETAILS</p>
+          <p style={valueTeaserMain}>View Your Custom Pricing Inside</p>
+          <p style={pricingSavings}>Early approval pricing available for {expiresInHours} hours after review</p>
         </div>
 
         {/* CTA Button */}
         <div style={ctaSection}>
           <a style={button} href={reviewUrl}>
-            Preview My Videos & Approve →
+            Preview Videos & See Pricing →
           </a>
           <p style={guarantee}>
-            ✓ 48-hour money-back guarantee • Keep videos forever • No contracts
+            48-hour money-back guarantee • Keep videos forever • No contracts
           </p>
         </div>
 
@@ -268,6 +267,11 @@ export const AdReadyEmailPreview = ({
         <div style={footer}>
           <p style={footerText}>
             Questions? Reply to this email or visit <a href="https://propertysimple.com/support" style={footerLink}>propertysimple.com/support</a>
+          </p>
+          <p style={footerLinks}>
+            <a href={`https://propertysimple.com/preferences?id=${campaignId}`} style={footerLink}>Update preferences</a>
+            {' • '}
+            <a href={`https://propertysimple.com/unsubscribe?id=${campaignId}`} style={footerLink}>Unsubscribe</a>
           </p>
           <p style={footerCopyright}>
             © 2024 PropertySimple. All rights reserved.
@@ -313,10 +317,8 @@ const urgencyBarTop = {
 const urgencyTextTop = {
   color: '#c05c3e',
   fontSize: '14px',
-  fontWeight: '700',
+  fontWeight: '600',
   margin: '0',
-  letterSpacing: '0.5px',
-  textTransform: 'uppercase' as const,
 };
 
 const hero = {
@@ -444,6 +446,14 @@ const pricingMain = {
   letterSpacing: '-1px',
 };
 
+const valueTeaserMain = {
+  color: '#2a1810',
+  fontSize: '28px',
+  fontWeight: '700',
+  margin: '0 0 12px',
+  lineHeight: '1.2',
+};
+
 const pricingSavings = {
   color: '#2a1810',
   fontSize: '14px',
@@ -534,6 +544,13 @@ const footerText = {
 const footerLink = {
   color: '#c05c3e',
   textDecoration: 'none',
+};
+
+const footerLinks = {
+  color: '#6b5b4f',
+  fontSize: '12px',
+  margin: '0 0 12px',
+  lineHeight: '1.6',
 };
 
 const footerCopyright = {

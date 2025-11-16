@@ -25,7 +25,7 @@ export const AdReadyEmail = ({
   campaignId = 'demo',
   expiresInHours = 24,
 }: AdReadyEmailProps) => {
-  const previewText = `Your campaign to reach 10,000+ buyers is ready - Preview & approve to lock in $117 launch pricing`;
+  const previewText = `Your professional video campaign is ready for ${propertyAddress} - Preview your videos and launch pricing inside`;
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
   const reviewUrl = `${baseUrl}/ad-preview/${campaignId}?utm_source=email&utm_campaign=ad_ready`;
 
@@ -51,7 +51,7 @@ export const AdReadyEmail = ({
           {/* Urgency Bar */}
           <Section style={urgencyBarTop}>
             <Text style={urgencyTextTop}>
-              ⏰ LAUNCH PRICING EXPIRES IN {expiresInHours} HOURS
+              Your personalized launch pricing is ready to view
             </Text>
           </Section>
 
@@ -200,21 +200,20 @@ export const AdReadyEmail = ({
             </table>
           </Section>
 
-          {/* Pricing Box */}
+          {/* Value Teaser Box */}
           <Section style={pricingBox}>
-            <Text style={pricingLabel}>LAUNCH PRICING</Text>
-            <Text style={pricingStrike}>$149</Text>
-            <Text style={pricingMain}>$117</Text>
-            <Text style={pricingSavings}>Save $32 • Approve within {expiresInHours} hours</Text>
+            <Text style={pricingLabel}>LAUNCH PRICING DETAILS</Text>
+            <Text style={valueTeaserMain}>View Your Custom Pricing Inside</Text>
+            <Text style={pricingSavings}>Early approval pricing available for {expiresInHours} hours after review</Text>
           </Section>
 
           {/* CTA */}
           <Section style={ctaSection}>
             <Button style={button} href={reviewUrl}>
-              Preview My Videos & Approve →
+              Preview Videos & See Pricing →
             </Button>
             <Text style={guarantee}>
-              ✓ 48-hour money-back guarantee • Keep videos forever • No contracts
+              48-hour money-back guarantee • Keep videos forever • No contracts
             </Text>
           </Section>
 
@@ -243,6 +242,11 @@ export const AdReadyEmail = ({
           <Section style={footer}>
             <Text style={footerText}>
               Questions? Reply to this email or visit <a href="https://propertysimple.com/support" style={footerLink}>propertysimple.com/support</a>
+            </Text>
+            <Text style={footerLinks}>
+              <a href={`https://propertysimple.com/preferences?id=${campaignId}`} style={footerLink}>Update preferences</a>
+              {' • '}
+              <a href={`https://propertysimple.com/unsubscribe?id=${campaignId}`} style={footerLink}>Unsubscribe</a>
             </Text>
             <Text style={footerCopyright}>
               © 2024 PropertySimple. All rights reserved.
@@ -289,9 +293,8 @@ const urgencyBarTop = {
 const urgencyTextTop = {
   color: '#c05c3e',
   fontSize: '14px',
-  fontWeight: '700' as const,
+  fontWeight: '600' as const,
   margin: '0',
-  letterSpacing: '0.5px',
 };
 
 const hero = {
@@ -412,6 +415,14 @@ const pricingMain = {
   letterSpacing: '-1px',
 };
 
+const valueTeaserMain = {
+  color: '#2a1810',
+  fontSize: '28px',
+  fontWeight: '700' as const,
+  margin: '0 0 12px',
+  lineHeight: '1.2',
+};
+
 const pricingSavings = {
   color: '#2a1810',
   fontSize: '14px',
@@ -497,6 +508,13 @@ const footerText = {
 const footerLink = {
   color: '#c05c3e',
   textDecoration: 'none',
+};
+
+const footerLinks = {
+  color: '#6b5b4f',
+  fontSize: '12px',
+  margin: '0 0 12px',
+  lineHeight: '1.6',
 };
 
 const footerCopyright = {
