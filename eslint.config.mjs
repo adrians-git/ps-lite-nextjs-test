@@ -15,8 +15,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Storybook build artifacts
+    // Storybook - exclude all Storybook files and build artifacts
     "storybook-static/**",
+    "**/*.stories.{ts,tsx}",
+    "stories/**",
+    ".storybook/**",
   ]),
   {
     rules: {
