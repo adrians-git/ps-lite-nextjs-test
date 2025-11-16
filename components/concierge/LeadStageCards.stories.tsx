@@ -80,6 +80,14 @@ export const EmptyState: Story = {
 };
 
 export const AllScenarios: Story = {
+  args: {
+    stages: {
+      new: 12,
+      aiEngaging: 8,
+      agentNeeded: 5,
+      converted: 3,
+    },
+  },
   render: () => (
     <div className="space-y-8">
       <div>

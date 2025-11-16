@@ -60,6 +60,11 @@ export const LongSuggestion: Story = {
 };
 
 export const InlineVariant: Story = {
+  args: {
+    suggestion: 'Sample suggestion',
+    onAccept: () => {},
+    onDismiss: () => {},
+  },
   render: () => (
     <div className="max-w-md space-y-4">
       <p className="text-sm text-muted-foreground">
@@ -85,6 +90,11 @@ export const InlineVariant: Story = {
 };
 
 export const AllVariants: Story = {
+  args: {
+    suggestion: 'Sample suggestion',
+    onAccept: () => {},
+    onDismiss: () => {},
+  },
   render: () => (
     <div className="space-y-6">
       <div>
@@ -119,6 +129,11 @@ export const AllVariants: Story = {
 };
 
 export const UseCases: Story = {
+  args: {
+    suggestion: 'Sample suggestion',
+    onAccept: () => {},
+    onDismiss: () => {},
+  },
   render: () => (
     <div className="space-y-8">
       <div>

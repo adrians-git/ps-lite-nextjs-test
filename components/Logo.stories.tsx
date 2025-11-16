@@ -39,6 +39,7 @@ export const DarkMode: Story = {
 };
 
 export const InNavigation: Story = {
+  args: {},
   render: () => (
     <div className="w-full bg-background border p-4">
       <div className="flex items-center gap-3">

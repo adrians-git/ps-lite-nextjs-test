@@ -66,6 +66,9 @@ export const LongTitle: Story = {
 };
 
 export const AllVariations: Story = {
+  args: {
+    title: 'Sample Title',
+  },
   render: () => (
     <div className="space-y-12">
       <div>

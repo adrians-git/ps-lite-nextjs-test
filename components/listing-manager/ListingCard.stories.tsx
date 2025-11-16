@@ -105,6 +105,14 @@ export const WithAllActions: Story = {
 };
 
 export const AllStatuses: Story = {
+  args: {
+    price: '$450,000',
+    address: '345 Rim Shadows Dr, Sedona, AZ 86336',
+    bedrooms: 3,
+    bathrooms: 2,
+    primaryActionLabel: 'Create Ad',
+    onPrimaryAction: () => {},
+  },
   render: () => (
     <div className="space-y-6">
       <div>

@@ -59,6 +59,12 @@ export const HighPerformance: Story = {
 };
 
 export const AllScenarios: Story = {
+  args: {
+    adSpend: '$1,200',
+    impressions: '45,000',
+    interactions: '1,350',
+    leadCount: 8,
+  },
   render: () => (
     <div className="space-y-6">
       <div>

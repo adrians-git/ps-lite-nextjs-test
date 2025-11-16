@@ -39,6 +39,9 @@ export const Email: Story = {
 };
 
 export const AllChannels: Story = {
+  args: {
+    channel: 'phone',
+  },
   render: () => (
     <div className="flex flex-col gap-4">
       <div>
